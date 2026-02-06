@@ -1,0 +1,299 @@
+/* ===============================
+   GLOBAL RESET
+=============================== */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+}
+
+/* ===============================
+   SIDEBAR
+=============================== */
+.sidebar{
+    width: 220px;
+    height: 100vh;
+    background: #2c3e50;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar a,
+.sidebar button {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.sidebar a.active,
+.sidebar a:hover,
+.sidebar button.active,
+.sidebar button:hover{
+    background: #1abc9c;
+}
+
+/* ===============================
+   CREATING SECTION (MASTER MENU)
+=============================== */
+.creating-section{
+    margin-left: 15px;
+}
+
+.creating-title{
+    display: block;
+    padding: 6px 15px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.creating-link{
+    display: block;
+    padding: 6px 30px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.creating-link:hover{
+    background: #34495e;
+}
+
+/* ===============================
+   CONTENT AREA
+=============================== */
+.content{
+    margin-left: 230px;   /* SAME AS SIDEBAR WIDTH */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px;
+}
+
+/* ===============================
+   FORM ELEMENTS
+=============================== */
+input,
+select{
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #555;
+    background: #fff;
+    margin-bottom: 18px;
+}
+
+input:focus,
+select:focus{
+    border-color: #1abc9c;
+    outline: none;
+    color: #000;
+}
+
+button{
+    display: block;
+    margin: 22px auto 0;
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #16a085;
+}
+
+/* ===============================
+   FORM BOX (ADD / CREATE PAGES)
+=============================== */
+.form-box{
+    width: 520px;
+    background: #fff;
+    padding: 40px 30px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* ADD STUDENT PAGE ROW */
+.page.add-student .form-row{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.page.add-student .form-row input,
+.page.add-student .form-row select{
+    margin-bottom: 0;
+}
+
+/* ===============================
+   ALERTS & MESSAGES
+=============================== */
+.error{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.toast-success{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+/* ===============================
+   SEARCH / FILTER ROW
+=============================== */
+.search-row{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-row select{
+    width: 160px;
+    margin-bottom: 0;
+}
+
+.search-row input{
+    width: 200px;
+    margin-bottom: 0;
+}
+
+.search-row button{
+    margin: 0;
+    height: 40px;
+    padding: 0 24px;
+}
+
+/* ===============================
+   REPORT FORM CONTAINER
+=============================== */
+/* ===============================
+   REPORT PAGE SPECIFIC
+=============================== */
+.report-page .form-container{
+    position: relative; /* toast / search row top properly align ah varum */
+    z-index: 1;
+}
+
+.report-page .search-row{
+    flex-wrap: wrap;   /* small screens la items overlap agakoodathu */
+    justify-content: center;
+}
+
+.report-page .search-row select,
+.report-page .search-row input{
+    width: auto;      /* fixed width ah set panna better ah display agum */
+    min-width: 160px;
+}
+
+.report-page .search-row button{
+    height: 40px;
+    padding: 0 20px;
+}
+
+/* table scroll if needed */
+.report-page table{
+    overflow-x: auto;
+    display: block;
+}
+
+
+/* ===============================
+   TABLE STYLES
+=============================== */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td{
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+table th{
+    background: #f2f2f2;
+}
+
+/* ===============================
+   MASTER / DROPDOWN (CREATING)
+=============================== */
+.dropdown{
+    color: #fff;
+}
+
+.dropdown-btn{
+    padding: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-btn:hover{
+    background: #1abc9c;
+}
+
+.dropdown-content{
+    display: none;
+    background: #34495e;
+}
+
+.dropdown-content a{
+    display: block;
+    padding: 10px 30px;   /* 👉 right side konjam talli */
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover{
+    background: #3d566e;
+}
+
+.show{
+    display: block;
+}
+
+.arrow{
+    float: right;
+    font-size: 12px;
+}
